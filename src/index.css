@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* theme variables */
+@theme {
+  --font-inter: "Inter", sans-serif;
+
+  --color-lwsGreen: #00D991;
+  --color-deepDark: #17181C;
+  --color-mediumDark: #1E1F24;
+  --color-lighterDark: #27292F;
+
+  --container-center: true;
+  --container-padding: 1rem;
+}
+
+/* custom utilities */
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility card {
+  @apply rounded-md border border-[#3F3F3F] bg-mediumDark px-4 py-4 lg:px-7 lg:py-5;
+}
+
+/* base styles */
+@layer base {
+  body {
+    @apply bg-deepDark font-inter text-gray-100;
+  }
+}
+
+/* components */
+@layer components {
+  .btn-primary {
+    @apply flex-center gap-2 rounded-md bg-lighterDark px-5 py-2.5 text-sm font-medium text-white hover:bg-deepDark lg:text-lg;
+  }
+
+  .icon-btn {
+    @apply flex-center rounded-md bg-lighterDark p-1.5 text-white hover:bg-deepDark;
+  }
+
+  .form-control {
+    @apply mb-6 space-y-2.5;
+  }
+
+  .auth-label {
+    @apply leading-[138%] lg:text-lg;
+  }
+
+  .auth-input {
+    @apply w-full rounded-md border border-[#CCCCCC]/14 bg-lighterDark p-1.5 focus:outline-none lg:p-3;
+  }
+
+  .post-avater {
+    @apply max-w-10 max-h-10 rounded-full lg:max-h-14.5 lg:max-w-14.5;
+  }
+
+  .action-modal-container {
+    @apply card absolute right-full top-6 min-w-50 divide-y divide-[#3F3F3F] py-2 [&>button]:py-2;
+  }
+
+  .action-menu-item {
+    @apply flex w-full items-center gap-2 text-gray-100 transition-all;
+  }
+}
