@@ -30,7 +30,7 @@ const ProfilePage = () => {
   }
   return (
     <div>
-      welecome,{user?.firstName} {""} {user?.lastName}
+      Welcome,{user?.firstName} {""} {user?.lastName}
       <p>You have {posts.length} posts</p>
     </div>
   );
