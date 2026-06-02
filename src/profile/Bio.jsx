@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useProfile } from '../hooks/useProfile';
 import useAxios from '../hooks/useAxios';
 import { actions } from '../actions';
-import CheckIcon from "../../assets/icons/check.svg";
-import EditIcon from "../../assets/icons/edit.svg";
+import CheckIcon from "../assets/icons/check.svg";
+import EditIcon from "../assets/icons/edit.svg";
 
 const Bio = () => {
     const { state, dispatch } = useProfile();

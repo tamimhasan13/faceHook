@@ -1,9 +1,9 @@
 import { useRef } from "react";
-import EditIcon from "../../assets/icons/edit.svg";
-import useAxios from "../../hooks/useAxios";
-import { useProfile } from "../../hooks/useProfile";
+import EditIcon from "../assets/icons/edit.svg";
+import { useProfile } from "../hooks/useProfile";
 
-import { actions } from "../../actions";
+import { actions } from "../actions";
+import useAxios from "../hooks/useAxios";
 
 const ProfileImage = () => {
   const { state, dispatch } = useProfile();
@@ -47,7 +47,7 @@ const ProfileImage = () => {
   return (
     <div className="relative mb-8 max-h-45 max-w-45 rounded-full lg:mb-11 lg:max-h-54.5 lg:max-w-54.5">
       <img
-        className="max-w-full rounded-full"
+        className="max-w-full max-h-full object-cover rounded-full"
         src={`${import.meta.env.VITE_SERVER_BASE_URL}/${state?.user?.avatar}`}
         alt={state?.user?.firstName}
       />
