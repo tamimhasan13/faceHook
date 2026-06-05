@@ -1,12 +1,12 @@
-import { useEffect, useReducer } from "react";
-import { Link } from "react-router-dom";
-import useAxios from "../hooks/useAxios";
-import { initialState, postReducer } from "../reducers/PostReducer";
+import { useEffect } from "react";
 import { actions } from "../actions";
+import useAxios from "../hooks/useAxios";
+import { usePost } from "../hooks/usePost";
 import PostList from "../posts/PostList";
+import NewPost from "../posts/NewPost";
 
 const HomePage = () => {
-  const [state, dispatch] = useReducer(postReducer, initialState);
+  const [state, dispatch] = usePost();
   const { api } = useAxios();
   useEffect(() => {
     dispatch({ type: actions.post.DATA_FETCHING });
@@ -44,6 +44,7 @@ const HomePage = () => {
   }
   return (
     <div>
+      <NewPost></NewPost>
       <PostList posts={state?.posts}></PostList>
     </div>
   );
